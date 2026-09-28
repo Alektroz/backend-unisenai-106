@@ -27,6 +27,14 @@ const AlunoController = {
       res.status(200).json({ mensagem: "Atualizado com sucesso!" });
     });
   },
+
+  estatisticas: (req, res) => {
+    AlunoRepository.contarPorCurso((erro, linhas) => {
+      if (erro) return res.status(500).json({ erro: erro.message });
+      res.status(200).json(linhas);
+    });
+  },
+
   remover: (req, res) => {
     const id = req.params.id;
     AlunoRepository.deletar(id, (erro, apagados) => {
