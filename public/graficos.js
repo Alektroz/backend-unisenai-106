@@ -4,7 +4,8 @@ const ctx = document.getElementById("graficoCursos").getContext("2d");
 // Função para buscar dados e montar o gráfico
 function carregarGrafico() {
   // Ajustado para buscar na rota que já funciona
-  fetch("/api/alunos")
+  fetch// Ajustado para buscar na rota que já funciona
+fetch('https://backend-unisenai-106.onrender.com/api/alunos')
     .then((resposta) => resposta.json())
     .then((dados) => {
       
